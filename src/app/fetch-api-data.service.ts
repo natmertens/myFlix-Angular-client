@@ -43,7 +43,7 @@ export class UserLoginService {
   }
   // Make api call for the user login endpoint
 
-  public UserLogin(userDetails: any): Observable<any> {
+  public userLogin(userDetails: any): Observable<any> {
     console.log(userDetails);
     return this.http.post(apiUrl + 'login', userDetails).pipe(
       catchError(this.handleError)
@@ -325,7 +325,7 @@ export class AddFavoriteMovieService {
 
   // Make api call to add favorite movie
 
-  AddFavoriteMovie(id: string): Observable<any> {
+  addFavoriteMovie(id: string): Observable<any> {
     const token = localStorage.getItem('token');
     const user = localStorage.getItem('user');
     return this.http.post(`${apiUrl}users/${user}/movies/${id}`, id, {
@@ -368,7 +368,7 @@ export class DeleteFavoriteMovieService {
 
   // Make api call to delete favorite movie
 
-  DeleteFavoriteMovie(): Observable<any> {
+  deleteFavoriteMovie(): Observable<any> {
     const token = localStorage.getItem('token');
     const user = localStorage.getItem('user');
     return this.http.delete(apiUrl + 'users/:Username/movies/:MovieID', {
@@ -411,7 +411,7 @@ export class EditUserService {
 
   // Make api call to edit user info
 
-  EditUser(userDetails: any): Observable<any> {
+  editUser(userDetails: any): Observable<any> {
     const token = localStorage.getItem('token');
     const user = localStorage.getItem('user');
     return this.http.put(`${apiUrl}users/${user}`, userDetails, {
@@ -454,7 +454,7 @@ export class DeleteUserService {
 
   // Make api call to delete user
 
-  DeleteUser(): Observable<any> {
+  deleteUser(): Observable<any> {
     const token = localStorage.getItem('token');
     const user = localStorage.getItem('user');
     return this.http.delete(`${apiUrl}users/${user}`, {
