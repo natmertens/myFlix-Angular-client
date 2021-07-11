@@ -108,7 +108,7 @@ export class GetAllMoviesService {
 @Injectable({
   providedIn: 'root'
 })
-export class getSingleMovieService {
+export class GetSingleMovieService {
   constructor(private http: HttpClient) {
   }
 
@@ -150,7 +150,7 @@ export class getSingleMovieService {
 @Injectable({
   providedIn: 'root'
 })
-export class getDirectorService {
+export class GetDirectorService {
   constructor(private http: HttpClient) {
   }
 
@@ -192,7 +192,7 @@ export class getDirectorService {
 @Injectable({
   providedIn: 'root'
 })
-export class getGenreService {
+export class GetGenreService {
   constructor(private http: HttpClient) {
   }
 
@@ -234,7 +234,7 @@ export class getGenreService {
 @Injectable({
   providedIn: 'root'
 })
-export class getUserService {
+export class GetUserService {
   constructor(private http: HttpClient) {
   }
 
@@ -277,7 +277,7 @@ export class getUserService {
 @Injectable({
   providedIn: 'root'
 })
-export class getFavoriteMovieService {
+export class GetFavoriteMovieService {
   constructor(private http: HttpClient) {
   }
 
