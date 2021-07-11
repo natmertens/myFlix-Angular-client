@@ -66,7 +66,7 @@ export class UserLoginService {
 @Injectable({
   providedIn: 'root'
 })
-export class getAllMoviesService {
+export class GetAllMoviesService {
   constructor(private http: HttpClient) {
   }
 
