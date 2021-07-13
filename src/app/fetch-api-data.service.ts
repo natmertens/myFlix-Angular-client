@@ -368,10 +368,10 @@ export class DeleteFavoriteMovieService {
 
   // Make api call to delete favorite movie
 
-  deleteFavoriteMovie(): Observable<any> {
+  deleteFavoriteMovie(id: string): Observable<any> {
     const token = localStorage.getItem('token');
     const user = localStorage.getItem('user');
-    return this.http.delete(apiUrl + 'users/:Username/movies/:MovieID', {
+    return this.http.delete(`${apiUrl}users/${user}/movies/${id}`, {
       headers: new HttpHeaders(
         {
           Authorization: 'Bearer ' + token,
@@ -405,13 +405,13 @@ export class DeleteFavoriteMovieService {
 @Injectable({
   providedIn: 'root'
 })
-export class EditUserService {
+export class UpdateUserService {
   constructor(private http: HttpClient) {
   }
 
   // Make api call to edit user info
 
-  editUser(userDetails: any): Observable<any> {
+  updateUser(userDetails: any): Observable<any> {
     const token = localStorage.getItem('token');
     const user = localStorage.getItem('user');
     return this.http.put(`${apiUrl}users/${user}`, userDetails, {

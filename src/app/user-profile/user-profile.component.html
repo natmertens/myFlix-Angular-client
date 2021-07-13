@@ -1,0 +1,28 @@
+<app-nav-bar></app-nav-bar>
+<div>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Your User Profile</mat-card-title>
+    </mat-card-header>
+    <mat-card-actions>
+      <button mat-raised-button (click)="openUpdateUserDialog()" color="primary">Update Profile</button>
+      <button mat-raised-button color="primary">Delete Account</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+<div>
+  <h2>Your Favorite Movies</h2>
+  <mat-card *ngFor="let favorite of favorites">
+    <mat-card-header>
+      <mat-card-title>{{favorite.Title}}</mat-card-title>
+      <mat-card-subtitle>Directed by: {{favorite.Director.Name}}</mat-card-subtitle>
+    </mat-card-header>
+    <img src={{favorite.ImagePath}} alt={{favorite.Title}} />
+    <mat-card-actions>
+      <button (click)="deleteFavorite(favorite._id)" mat-button color="primary">
+        Remove from Favorites
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
