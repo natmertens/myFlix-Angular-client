@@ -23,7 +23,6 @@ export class UserProfileComponent implements OnInit {
 
   ngOnInit(): void {
     this.getUser();
-    this.getMovies();
   }
 
   getUser(): void {
@@ -32,7 +31,7 @@ export class UserProfileComponent implements OnInit {
       /*this.favorites = resp.FavoriteMovies;*/
       console.log(this.user);
       /*console.log(this.favorites);*/
-      return this.user;
+      this.getMovies();
     });
   }
 
