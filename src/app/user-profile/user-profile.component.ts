@@ -3,8 +3,10 @@ import { UpdateProfileComponent } from '../update-profile/update-profile.compone
 import { GetUserService } from '../fetch-api-data.service';
 import { GetAllMoviesService } from '../fetch-api-data.service';
 import { DeleteFavoriteMovieService } from '../fetch-api-data.service';
+import { DeleteUserService } from '../fetch-api-data.service';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-profile',
@@ -16,8 +18,8 @@ export class UserProfileComponent implements OnInit {
   movies: any[] = [];
   favorites: any[] = [];
   /*@Input() userData = { Username: '', Password: '', Email: '', Birthday: '' };*/
-  constructor(public fetchUserData: GetUserService, public fetchMovieData: GetAllMoviesService, public deleteFavoriteData: DeleteFavoriteMovieService, public dialog: MatDialog,
-    public snackBar: MatSnackBar) { }
+  constructor(public fetchUserData: GetUserService, public fetchMovieData: GetAllMoviesService, public deleteFavoriteData: DeleteFavoriteMovieService, public deleteUserData: DeleteUserService, public dialog: MatDialog,
+    public snackBar: MatSnackBar, public router: Router) { }
 
   ngOnInit(): void {
     this.getUser();
@@ -54,6 +56,24 @@ export class UserProfileComponent implements OnInit {
         window.location.reload();
       }, 2000);
     });
+  }
+
+  deleteUser(): void {
+    this.deleteUserData.deleteUser().subscribe((result) => {
+      console.log(result);
+      this.snackBar.open('Account successfully deleted!', 'OK', {
+        duration: 2000
+      });
+      localStorage.clear();
+    }, (result) => {
+      this.snackBar.open(result, 'OK', {
+        duration: 2000
+      });
+      this.router.navigate(['/welcome']).then(() => {
+        window.location.reload();
+      });
+    }
+    );
   }
 
   openUpdateUserDialog(): void {

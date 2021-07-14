@@ -24,6 +24,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UpdateProfileComponent } from './update-profile/update-profile.component';
+import { DirectorComponent } from './director/director.component';
+import { GenreComponent } from './genre/genre.component';
+import { MovieDetailsComponent } from './movie-details/movie-details.component';
 
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
@@ -42,7 +45,10 @@ const appRoutes: Routes = [
     WelcomePageComponent,
     NavBarComponent,
     UserProfileComponent,
-    UpdateProfileComponent
+    UpdateProfileComponent,
+    DirectorComponent,
+    GenreComponent,
+    MovieDetailsComponent
   ],
   imports: [
     BrowserModule,
