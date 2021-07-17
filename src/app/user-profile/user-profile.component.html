@@ -43,6 +43,9 @@
         <mat-card-subtitle class="movie-subtitle">Directed by: {{favorite.Director.Name}}</mat-card-subtitle>
       </mat-card-header>
       <img src={{favorite.ImagePath}} alt={{favorite.Title}} />
+      <mat-card-content class="synopsis">
+        <p> {{favorite.Description}}</p>
+      </mat-card-content>
       <mat-card-actions>
         <button (click)="deleteFavorite(favorite._id)" mat-button color="primary" class="remove-movie-button">
           Remove from Favorites
