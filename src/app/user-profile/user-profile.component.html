@@ -1,6 +1,19 @@
 <app-nav-bar></app-nav-bar>
 <div>
-  <mat-card>
+  <h1>Your User Profile</h1>
+  <div class="user-data">
+    <p style="font-weight: bold;">Username:</p>
+    <p>{{user.Username}}</p>
+    <p style="font-weight: bold;">Email:</p>
+    <p>{{user.Email}}</p>
+    <p style="font-weight: bold;">Birthday:</p>
+    <p>{{user.Birthday.substring(0,10)}}</p>
+    <button mat-raised-button (click)="openUpdateUserDialog()" color="primary">Update Profile</button>
+    <button mat-raised-button color="primary" (click)="deleteUser()">Delete Account</button>
+  </div>
+
+  <!--
+    <mat-card>
     <mat-card-header>
       <mat-card-title>Your User Profile</mat-card-title>
     </mat-card-header>
@@ -18,22 +31,25 @@
       <button mat-raised-button color="primary" (click)="deleteUser()">Delete Account</button>
     </mat-card-actions>
   </mat-card>
+-->
 </div>
 
-<div *ngIf="favorites.length > 0">
-  <h2>Your Favorite Movies</h2>
-  <mat-card *ngFor="let favorite of favorites">
-    <mat-card-header>
-      <mat-card-title>{{favorite.Title}}</mat-card-title>
-      <mat-card-subtitle>Directed by: {{favorite.Director.Name}}</mat-card-subtitle>
-    </mat-card-header>
-    <img src={{favorite.ImagePath}} alt={{favorite.Title}} />
-    <mat-card-actions>
-      <button (click)="deleteFavorite(favorite._id)" mat-button color="primary">
-        Remove from Favorites
-      </button>
-    </mat-card-actions>
-  </mat-card>
+<div *ngIf="favorites.length > 0" class="favorite-movies">
+  <h1>Your Favorite Movies</h1>
+  <div class="movies-container">
+    <mat-card *ngFor="let favorite of favorites" class="movie-card">
+      <mat-card-header>
+        <mat-card-title class="movie-title">{{favorite.Title}}</mat-card-title>
+        <mat-card-subtitle class="movie-subtitle">Directed by: {{favorite.Director.Name}}</mat-card-subtitle>
+      </mat-card-header>
+      <img src={{favorite.ImagePath}} alt={{favorite.Title}} />
+      <mat-card-actions>
+        <button (click)="deleteFavorite(favorite._id)" mat-button color="primary" class="remove-movie-button">
+          Remove from Favorites
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
 </div>
 
 <!--

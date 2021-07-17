@@ -19,8 +19,9 @@
         (click)="openDetailsDialog(movie.Title, movie.ImagePath, movie.Description, movie.Director.Name, movie.Genre.Name)">
         Synopsis
       </button>
-      <button aria-hidden="false" aria-label="heart icon that adds movie to favorites list"
-        (click)="addFavorite(movie._id)" class="heart-icon-button">
+      <button mat-icon-button aria-hidden="false" aria-label="heart icon that adds movie to favorites list"
+        matTooltip="Favorite movie" matTooltipPosition="above" (click)="addFavorite(movie._id)"
+        class="heart-icon-button">
         <mat-icon color="primary">favorite_border</mat-icon>
       </button>
     </mat-card-actions>

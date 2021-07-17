@@ -4,15 +4,17 @@ img {
 }
 
 button {
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .movies-container {
   display: grid;
-  grid-template-columns: 17% 17% 17% 17% 17%;
-  grid-template-rows: 60% 60%;
+  /*grid-template-columns: 17% 17% 17% 17% 17%;
+  grid-template-rows: 60% 60%;*/
+  grid-template-columns: repeat(auto-fit, 400px);
+  gap: 50px;
   justify-content: space-around;
-  margin-top: 50px
+  margin-top: 50px;
 }
 
 .movie-card {
@@ -29,7 +31,6 @@ margin-top: 20px;
   margin-left: 15px;
   padding-top: 7px;
   margin-top: 10px;
-  background-color: white;
 }
 
 .movie-title {

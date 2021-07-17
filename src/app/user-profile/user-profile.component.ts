@@ -28,9 +28,7 @@ export class UserProfileComponent implements OnInit {
   getUser(): void {
     this.fetchUserData.getUser().subscribe((resp: any) => {
       this.user = resp;
-      /*this.favorites = resp.FavoriteMovies;*/
       console.log(this.user);
-      /*console.log(this.favorites);*/
       this.getMovies();
     });
   }
