@@ -1,0 +1,42 @@
+img {
+  width: 80%;
+  margin: 0 auto;
+}
+
+button {
+  font-size: 18px;
+}
+
+.movies-container {
+  display: grid;
+  grid-template-columns: 17% 17% 17% 17% 17%;
+  grid-template-rows: 60% 60%;
+  justify-content: space-around;
+  margin-top: 50px
+}
+
+.movie-card {
+  flex: 1 1 auto;
+  margin-bottom: 20px; 
+}
+
+.movie-card-buttons {
+width: 90%;
+margin-top: 20px;
+}
+
+.heart-icon-button {
+  margin-left: 15px;
+  padding-top: 7px;
+  margin-top: 10px;
+  background-color: white;
+}
+
+.movie-title {
+  font-size: 22px;
+  padding-bottom: 10px;
+}
+
+.movie-subtitle {
+  font-size: 18px;
+}

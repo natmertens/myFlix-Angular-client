@@ -1,6 +1,19 @@
-<div>
+<!--<div>
   <h2>{{data.title}}</h2>
   <img src={{data.imagePath}} alt={{data.title}} width="400px" height="auto" />
   <p style="font-weight: bold;">Synopsis:</p>
   <p>{{data.description}}</p>
+</div>-->
+
+<div>
+  <mat-card class="movie-card">
+    <mat-card-header>
+      <mat-card-title class="movie-title">{{data.title}}</mat-card-title>
+      <mat-card-subtitle class="movie-subtitle">Directed by: {{data.director}}</mat-card-subtitle>
+    </mat-card-header>
+    <img src={{data.imagePath}} alt={{data.title}} />
+    <mat-card-content>
+      <p> {{data.description}}</p>
+    </mat-card-content>
+  </mat-card>
 </div>
