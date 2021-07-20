@@ -1,6 +1,4 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog';
-import { GetGenreService } from '../fetch-api-data.service';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
@@ -11,7 +9,10 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 export class GenreComponent implements OnInit {
   genre: string = '';
 
-  /*constructor(public fetchApiData: GetGenreService, public dialofRef: MatDialogRef<GenreComponent>) { }*/
+  /**
+   * 
+   * @param data 
+   */
   constructor(@Inject(MAT_DIALOG_DATA)
   public data: {
     name: string;
@@ -19,6 +20,5 @@ export class GenreComponent implements OnInit {
   }) { }
 
   ngOnInit(): void {
-
   }
 }

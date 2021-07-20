@@ -8,7 +8,11 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./nav-bar.component.scss']
 })
 export class NavBarComponent implements OnInit {
-
+  /**
+   * 
+   * @param snackBar 
+   * @param router 
+   */
   constructor(public snackBar: MatSnackBar,
     public router: Router) { }
 
@@ -23,6 +27,9 @@ export class NavBarComponent implements OnInit {
     this.router.navigate(['user-profile']);
   }
 
+  /**
+   * log out user
+   */
   logOut(): void {
     localStorage.clear();
     this.router.navigate(['welcome']);

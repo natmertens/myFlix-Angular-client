@@ -17,7 +17,16 @@ export class UserProfileComponent implements OnInit {
   user: any = {};
   movies: any[] = [];
   favorites: any[] = [];
-  /*@Input() userData = { Username: '', Password: '', Email: '', Birthday: '' };*/
+  /**
+   * 
+   * @param fetchUserData 
+   * @param fetchMovieData 
+   * @param deleteFavoriteData 
+   * @param deleteUserData 
+   * @param dialog 
+   * @param snackBar 
+   * @param router 
+   */
   constructor(public fetchUserData: GetUserService, public fetchMovieData: GetAllMoviesService, public deleteFavoriteData: DeleteFavoriteMovieService, public deleteUserData: DeleteUserService, public dialog: MatDialog,
     public snackBar: MatSnackBar, public router: Router) { }
 
@@ -25,6 +34,9 @@ export class UserProfileComponent implements OnInit {
     this.getUser();
   }
 
+  /**
+   * get all data belonging to user
+   */
   getUser(): void {
     this.fetchUserData.getUser().subscribe((resp: any) => {
       this.user = resp;
@@ -33,6 +45,9 @@ export class UserProfileComponent implements OnInit {
     });
   }
 
+  /**
+   * get all movies and filter for favorites
+   */
   getMovies(): void {
     this.fetchMovieData.getAllMovies().subscribe((resp: any) => {
       this.movies = resp;
@@ -44,6 +59,9 @@ export class UserProfileComponent implements OnInit {
     });
   }
 
+  /**
+   * delete favorite movie and reload profile page
+   */
   deleteFavorite(id: string): void {
     this.deleteFavoriteData.deleteFavoriteMovie(id).subscribe((resp: any) => {
       this.snackBar.open('Movie was removed from your favorites!', 'OK', {
@@ -55,6 +73,9 @@ export class UserProfileComponent implements OnInit {
     });
   }
 
+  /**
+   * delete user data and navigate back to welcome screen
+   */
   deleteUser(): void {
     this.deleteUserData.deleteUser().subscribe((result) => {
       console.log(result);
@@ -73,6 +94,9 @@ export class UserProfileComponent implements OnInit {
     );
   }
 
+  /**
+   * open dialog for updating user data
+   */
   openUpdateUserDialog(): void {
     this.dialog.open(UpdateProfileComponent, {
       width: '280px'

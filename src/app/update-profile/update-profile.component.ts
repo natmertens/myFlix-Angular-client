@@ -11,16 +11,24 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class UpdateProfileComponent implements OnInit {
   @Input() userData = { Username: '', Password: '', Email: '', Birthday: '' };
 
+  /**
+   * 
+   * @param updateUserData 
+   * @param dialogRef 
+   * @param snackBar 
+   */
   constructor(public updateUserData: UpdateUserService, public dialogRef: MatDialogRef<UpdateProfileComponent>,
     public snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
   }
 
+  /**
+   * update user
+   */
   updateUser(): void {
     this.updateUserData.updateUser(this.userData).subscribe((result) => {
-      // Logic for a successful user registration goes here! (To be implemented)
-      this.dialogRef.close(); // This will close the modal on success!
+      this.dialogRef.close();
       console.log(result);
       localStorage.setItem('user', result.Username);
       this.snackBar.open('Profile was updated', 'OK', {

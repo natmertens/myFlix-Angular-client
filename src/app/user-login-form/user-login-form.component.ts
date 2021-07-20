@@ -10,9 +10,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./user-login-form.component.scss']
 })
 export class UserLoginFormComponent implements OnInit {
-
   @Input() userData = { Username: '', Password: '' };
 
+  /**
+   * 
+   * @param fetchApiData 
+   * @param dialogRef 
+   * @param snackBar 
+   * @param router 
+   */
   constructor(public fetchApiData: UserLoginService,
     public dialogRef: MatDialogRef<UserLoginFormComponent>,
     public snackBar: MatSnackBar,
@@ -21,9 +27,11 @@ export class UserLoginFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+   * log in user
+   */
   loginUser(): void {
     this.fetchApiData.userLogin(this.userData).subscribe((result) => {
-      // Logic for a successful user login goes here
       this.dialogRef.close();
       localStorage.setItem('user', result.user.Username);
       localStorage.setItem('token', result.token)
@@ -34,5 +42,4 @@ export class UserLoginFormComponent implements OnInit {
       this.snackBar.open(result, 'OK', { duration: 2000 });
     });
   }
-
 }
