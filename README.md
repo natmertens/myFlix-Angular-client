@@ -1,5 +1,8 @@
 # MyFlixAngularClient
 
+This project was about building the client-side for a movie application based on its corresponding REST API and database created at an earlier time. This single page application allows users to create an account, see a list of all of the application’s movies, add movies to and remove movies from a list of favorite, and update their user profile.
+The project makes use of the MEAN tech stack (MongoDB, Express, Angular, Node.js), as well as Angular Material for building UI components.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.0.
 
 ## Development server
