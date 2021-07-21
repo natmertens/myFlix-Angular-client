@@ -4,7 +4,7 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
 import { Observable, throwError } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//Declaring the api url that will provide data for the client app
+//Declaring the API URL that will provide data for the client app
 const apiUrl = 'https://natalies-myflix.herokuapp.com/';
 @Injectable({
   providedIn: 'root'
@@ -18,7 +18,7 @@ export class UserRegistrationService {
   }
 
   /**
-   * Make api call to the user registration endpoint
+   * Make API call to the user registration endpoint
    * @param userDetails 
    * @returns 
    */
@@ -55,7 +55,7 @@ export class UserLoginService {
   }
 
   /**
-   * Make api call to the user login endpoint
+   * Make API call to the user login endpoint
    * @param userDetails 
    * @returns 
    */
@@ -92,7 +92,7 @@ export class GetAllMoviesService {
   }
 
   /**
-   * Make api call to get all movies
+   * Make API call to get all movies
    * @returns 
    */
   getAllMovies(): Observable<any> {
@@ -184,7 +184,7 @@ export class GetDirectorService {
   }
 
   /**
-   * Make api call to get information about director
+   * Make API call to get information about director
    * @returns 
    */
   getDirector(): Observable<any> {
@@ -233,7 +233,7 @@ export class GetGenreService {
   }
 
   /**
-   * Make api call to get information about a genre
+   * Make API call to get information about a genre
    * @returns 
    */
   getGenre(): Observable<any> {
@@ -282,7 +282,7 @@ export class GetUserService {
   }
 
   /**
-   * Make api call to get user info
+   * Make API call to get user info
    * @returns 
    */
   getUser(): Observable<any> {
@@ -374,7 +374,7 @@ export class AddFavoriteMovieService {
   }
 
   /**
-   * Make api call to add favorite movie
+   * Make API call to add favorite movie
    * @param id 
    * @returns 
    */
@@ -425,7 +425,7 @@ export class DeleteFavoriteMovieService {
   }
 
   /**
-   * Make api call to delete favorite movie
+   * Make API call to delete favorite movie
    * @param id 
    * @returns 
    */
@@ -476,7 +476,7 @@ export class UpdateUserService {
   }
 
   /**
-   * Make api call to edit user info
+   * Make API call to edit user info
    * @param userDetails 
    * @returns 
    */
@@ -527,7 +527,7 @@ export class DeleteUserService {
   }
 
   /**
-   * Make api call to delete user
+   * Make API call to delete user
    * @returns 
    */
   deleteUser(): Observable<any> {
