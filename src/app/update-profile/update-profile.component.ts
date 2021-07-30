@@ -29,9 +29,9 @@ export class UpdateProfileComponent implements OnInit {
   updateUser(): void {
     this.updateUserData.updateUser(this.userData).subscribe((result) => {
       this.dialogRef.close();
-      console.log(result);
+      /*console.log(result);*/
       localStorage.setItem('user', result.Username);
-      this.snackBar.open('Profile was updated', 'OK', {
+      this.snackBar.open('Great!', ' Your profile was updated', {
         duration: 2000
       });
     }, (result) => {

@@ -47,7 +47,7 @@ export class MovieCardComponent implements OnInit {
    */
   addFavorite(id: string): any {
     this.addFavoriteData.addFavoriteMovie(id).subscribe((resp: any) => {
-      this.snackBar.open('Movie added to favorites!', 'OK', {
+      this.snackBar.open('Great!', 'Movie was added to favorites!', {
         duration: 2000,
       });
     })

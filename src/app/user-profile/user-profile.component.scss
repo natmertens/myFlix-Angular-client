@@ -30,6 +30,7 @@ button {
 .user-data {
   text-align: center;
   margin: 40px;
+  line-height: 1.4;
 }
 
 .remove-movie-button {
@@ -47,17 +48,18 @@ button {
   display: grid;
   /*grid-template-columns: 20rem 20rem 20rem 20rem;
   grid-template-rows: 65% 65% 65% 65%;*/
-  grid-template-columns: repeat(auto-fit, 400px);
+  grid-template-columns: repeat(auto-fit, 380px);
   gap: 50px;
-  justify-content: space-around;
+  justify-content: center;
   margin-top: 120px;
 }
 
 .movie-card {
-  flex: 1 1 auto;
+  /*flex: 1 1 auto;*/
   margin-bottom: 20px; 
-  width: 28rem;
-  flex-wrap: wrap;
+  margin-right: 50px;
+  width: 22rem;
+  /*flex-wrap: wrap;*/
 }
 
 .movie-title {
@@ -67,4 +69,8 @@ button {
 
 .movie-subtitle {
   font-size: 18px;
+}
+
+.user-data p {
+  font-size: 22px;
 }

@@ -1,5 +1,16 @@
-<div class="nav-bar">
+<!--
+  <div class="nav-bar">
   <button mat-button color="primary" (click)="seeMovies()">See Movies</button>
   <button mat-button color="primary" (click)="seeProfile()">Profile</button>
   <button mat-button color="primary" (click)="logOut()">Log out</button>
 </div>
+-->
+
+<mat-toolbar color="primary" class="navbar">
+  <div>myFlix</div>
+  <div>
+    <a (click)="seeMovies()">All Movies</a>
+    <a (click)="seeProfile()">Profile</a>
+    <a (click)="logOut()">Log out</a>
+  </div>
+</mat-toolbar>
