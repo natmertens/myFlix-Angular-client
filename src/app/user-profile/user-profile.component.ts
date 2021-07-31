@@ -40,7 +40,7 @@ export class UserProfileComponent implements OnInit {
   getUser(): void {
     this.fetchUserData.getUser().subscribe((resp: any) => {
       this.user = resp;
-      console.log(this.user);
+      /*console.log(this.user);*/
       this.getMovies();
     });
   }
@@ -51,11 +51,11 @@ export class UserProfileComponent implements OnInit {
   getMovies(): void {
     this.fetchMovieData.getAllMovies().subscribe((resp: any) => {
       this.movies = resp;
-      console.log(this.movies);
+      /*console.log(this.movies);*/
       this.favorites = this.movies.filter((movie: any) => {
         return (this.user.FavoriteMovies.indexOf(movie._id) !== -1);
       });
-      console.log(this.favorites);
+      /*console.log(this.favorites);*/
     });
   }
 
@@ -78,7 +78,7 @@ export class UserProfileComponent implements OnInit {
    */
   deleteUser(): void {
     this.deleteUserData.deleteUser().subscribe((result) => {
-      console.log(result);
+      /*console.log(result);*/
       this.snackBar.open('Account successfully deleted!', 'OK', {
         duration: 2000
       });
